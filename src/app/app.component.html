@@ -1,0 +1,28 @@
+<!--<input id="newNotes">
+<button (click)="addNotes()">Add Notes</button>
+
+<h3 *ngFor="let note of notes">
+  <b>* {{note.description}}</b>
+  <button (click)="deleteNotes(note.id)">Delete Notes</button>
+</h3>
+
+-->
+<!-- app.component.html -->
+
+<div class="container">
+  <h1>My To-Do List</h1>
+
+  <div class="add-note">
+    <input id="newNotes" placeholder="Add a new note">
+    <button (click)="addNotes()">Add Note</button>
+  </div>
+
+  <div *ngIf="notes.length === 0" class="no-notes">
+    No notes available.
+  </div>
+
+  <div *ngFor="let note of notes" class="note">
+    <div class="note-description">{{ note.description }}</div>
+    <button (click)="deleteNotes(note.id)" class="delete-button">Delete Note</button>
+  </div>
+</div>
